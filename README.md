@@ -9,5 +9,5 @@
 **Procedure:** 
 1. Load data
 2. Use data values, add parameters and build Linear Regression Model
-3. Create website for user interaction 
+3. Create website for user front end interaction 
 
