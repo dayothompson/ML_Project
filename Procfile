@@ -1,0 +1,1 @@
+web: gunicorn ML_Project_app.app:app
