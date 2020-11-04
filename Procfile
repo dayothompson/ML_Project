@@ -1,1 +1,1 @@
-web: gunicorn app:app
+web: gunicorn ML_Project_app.app:app
