@@ -257,6 +257,7 @@ def getvalues():
     half_bath = int(half_bath)
     property_area = float(property_area)
     year_built = int(year_built)
+    #years_old = int(year_built)
     #distance_downtown = float(distance_downtown)
     lot_size = float(lot_size)
     basement = int(basement)
@@ -270,6 +271,8 @@ def getvalues():
 
     years_old = 2021 - year_built
 
+    #print(years_old)
+    #print(type(years_old))
     #print(postal_code)
 
     # Testing ML Model
