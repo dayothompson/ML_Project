@@ -59,9 +59,9 @@ def bar_fun():
 
     return bar_data
 
-@app.route("/")
+@app.route("/index")
 def home():
-
+    print("Iam IN INDEX")
     # create cursor
     cur = con.cursor()
 
@@ -84,6 +84,7 @@ def home():
 
 @app.route("/jsonified")
 def calgary_data():
+    print("I am JSONIFIED")
     """Return the Calgary data as json"""
     calgary = calgary_data_fun()
     # calgary = calgary[:15]
@@ -92,24 +93,29 @@ def calgary_data():
 
 @app.route("/bardata")
 def bar_data():
+    print("I am Bardata")
     bar = bar_fun()
     return jsonify(bar)
 
 
 @app.route("/viz")
 def viz():
+    print("I am VIZ")
     return render_template("viz.html")
 
 @app.route("/scatter")
 def scatter():
+    print("I am Scatter")
     return render_template("scatter.html")
 
 @app.route("/bar")
 def bar():
+    print("I am Bar")
     return render_template("bar.html")
 
 @app.route("/data")
 def data():
+    print("I am Data")
     # create cursor
     cur = con.cursor()
 
@@ -128,18 +134,19 @@ def data():
     # Return template and data
     return render_template("data.html", calgary=[i for i in calgary_data])
 
-@app.route("/houseprice")
+@app.route("/")
 def house_price():
-    
+    print("I am houseprice index")
     return render_template("houseprice.html")
 
-@app.route("/houseprice",methods=['POST'])
+@app.route("/",methods=['POST'])
 def getvalues():
+    print("I am houseprice data")
     bed = request.form['bed']
     full_bath = request.form['full_bath']
     half_bath = request.form['half_bath']
     property_area = request.form['property_area']
-    year_built = request.form['year_built']
+    years_old = request.form['years_old']
     #distance_downtown = request.form['distance_downtown']
     lot_size = request.form['lot_size']
     option_basement = request.form['option_basement']
@@ -248,7 +255,7 @@ def getvalues():
     a = sin(dlat / 2)**2 + cos(lat1) * cos(lat2) * sin(dlon / 2)**2
     c = 2 * atan2(sqrt(a), sqrt(1 - a))
     R = 6373.0
-    distance_downtown = (R * c)+5
+    distance_downtown = (R * c)
 
 
     # Convert to numeric
@@ -256,7 +263,7 @@ def getvalues():
     full_bath = int(full_bath)
     half_bath = int(half_bath)
     property_area = float(property_area)
-    year_built = int(year_built)
+    years_old = int(years_old)
     #distance_downtown = float(distance_downtown)
     lot_size = float(lot_size)
     basement = int(basement)
@@ -267,8 +274,6 @@ def getvalues():
     house = int(house)
     condo = int(condo)
     townhouse = int(townhouse)
-
-    years_old = 2021 - year_built
 
     #print(postal_code)
 
@@ -286,7 +291,7 @@ def getvalues():
 
     #score = reconstructed_model.fit(test_data)
 
-    return render_template("houseprice.html", Ypredict=[Ypredict])
+    return render_template("index.html", Ypredict=[Ypredict])
 
 if __name__ == "__main__":
     app.run(debug=True)

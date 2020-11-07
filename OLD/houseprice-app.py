@@ -1,6 +1,4 @@
 from flask import Flask, render_template, jsonify
-from flask_sqlalchemy import SQLAlchemy
-import psycopg2
 from flask import request
 import joblib
 import pgeocode
@@ -15,121 +13,8 @@ import re
 
 app = Flask(__name__)
 
-db = SQLAlchemy()
-
-# connect to the db
-con = psycopg2.connect(
-            host="localhost",
-            database="realestate_db",
-            user="postgres",
-            password="1"
-)
-
-def calgary_data_fun():
-    cur = con.cursor()
-
-    # execute query
-    cur.execute("SELECT json_agg(t) FROM (SELECT cl.price, cl.address, cl.postal_code, cl.bed, cl.full_bath, cl.half_bath, cl.property_area, cl.property_type, s.walk_score, s.bike_score, s.transit_score, coord.lat, coord.long FROM calgary_df AS cl JOIN score_df AS s ON cl.postal_code = s.postal_code JOIN coordinates_df AS coord ON s.postal_code = coord.postal_codes WHERE cl.price < 1000000 AND cl.property_area < 4000 AND s.walk_score > 5 AND s.bike_score > 0 AND s.transit_score > 0)t")
-
-    calgary_data = cur.fetchall()
-    # print(calgary_data)
-
-    # close cursor
-    #cur.close()
-
-    # close the connection
-    #con.close()
-
-    return calgary_data
-
-def bar_fun():
-    cur = con.cursor()
-
-    # execute query
-    cur.execute("SELECT json_agg(t) FROM (SELECT cl.price, cl.address, cl.postal_code, cl.bed, cl.full_bath, cl.half_bath, cl.property_area, cl.property_type, s.walk_score, s.bike_score, s.transit_score, coord.lat, coord.long FROM calgary_df AS cl JOIN score_df AS s ON cl.postal_code = s.postal_code JOIN coordinates_df AS coord ON s.postal_code = coord.postal_codes WHERE cl.price < 1000000 AND cl.property_area < 4000 AND cl.property_type IS NOT null)t")
-
-    bar_data = cur.fetchall()
-    # print(calgary_data)
-
-    # close cursor
-    #cur.close()
-
-    # close the connection
-    #con.close()
-
-    return bar_data
-
-@app.route("/")
-def home():
-
-    # create cursor
-    cur = con.cursor()
-
-    # execute query
-    cur.execute("SELECT json_agg(t) FROM (SELECT cl.price, cl.address, cl.postal_code, cl.bed, cl.full_bath, cl.half_bath, cl.property_area, cl.property_type, s.walk_score, s.bike_score, s.transit_score, coord.lat, coord.long FROM calgary_df AS cl JOIN score_df AS s ON cl.postal_code = s.postal_code JOIN coordinates_df AS coord ON s.postal_code = coord.postal_codes WHERE cl.price < 1000000 AND cl.property_area < 4000)t")
-    
-    calgary_data = cur.fetchall()
-    # print(calgary_data)
-
-    # close cursor
-    #cur.close()
-
-    # close the connection
-    #con.close()
-
-    # Return template and data
-    return render_template("index.html", calgary=[i for i in calgary_data])
-
-
-
-@app.route("/jsonified")
-def calgary_data():
-    """Return the Calgary data as json"""
-    calgary = calgary_data_fun()
-    # calgary = calgary[:15]
-    return jsonify(calgary)
-
-
-@app.route("/bardata")
-def bar_data():
-    bar = bar_fun()
-    return jsonify(bar)
-
-
-@app.route("/viz")
-def viz():
-    return render_template("viz.html")
-
-@app.route("/scatter")
-def scatter():
-    return render_template("scatter.html")
-
-@app.route("/bar")
-def bar():
-    return render_template("bar.html")
-
-@app.route("/data")
-def data():
-    # create cursor
-    cur = con.cursor()
-
-    # execute query
-    cur.execute("SELECT cl.price, cl.address, cl.postal_code, cl.bed, cl.full_bath, cl.half_bath, cl.property_area, cl.property_type, s.walk_score, s.bike_score, s.transit_score, coord.lat, coord.long FROM calgary_df AS cl JOIN score_df AS s ON cl.postal_code = s.postal_code JOIN coordinates_df AS coord ON s.postal_code = coord.postal_codes WHERE cl.price < 1000000 AND cl.property_area < 4000")
-    
-    calgary_data = cur.fetchall()
-    # print(calgary_data)
-
-    # close cursor
-    #cur.close()
-
-    # close the connection
-    #con.close()
-
-    # Return template and data
-    return render_template("data.html", calgary=[i for i in calgary_data])
-
 @app.route("/houseprice")
-def house_price():
+def home():
     
     return render_template("houseprice.html")
 
@@ -139,7 +24,7 @@ def getvalues():
     full_bath = request.form['full_bath']
     half_bath = request.form['half_bath']
     property_area = request.form['property_area']
-    year_built = request.form['year_built']
+    years_old = request.form['years_old']
     #distance_downtown = request.form['distance_downtown']
     lot_size = request.form['lot_size']
     option_basement = request.form['option_basement']
@@ -248,7 +133,7 @@ def getvalues():
     a = sin(dlat / 2)**2 + cos(lat1) * cos(lat2) * sin(dlon / 2)**2
     c = 2 * atan2(sqrt(a), sqrt(1 - a))
     R = 6373.0
-    distance_downtown = (R * c)+5
+    distance_downtown = (R * c)
 
 
     # Convert to numeric
@@ -256,7 +141,7 @@ def getvalues():
     full_bath = int(full_bath)
     half_bath = int(half_bath)
     property_area = float(property_area)
-    year_built = int(year_built)
+    years_old = int(years_old)
     #distance_downtown = float(distance_downtown)
     lot_size = float(lot_size)
     basement = int(basement)
@@ -267,8 +152,6 @@ def getvalues():
     house = int(house)
     condo = int(condo)
     townhouse = int(townhouse)
-
-    years_old = 2021 - year_built
 
     #print(postal_code)
 
