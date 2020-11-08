@@ -34,10 +34,10 @@
                   <li><a href="scatter">Scatter Plot</a></li>
                   <li><a href="bar">Density Graph</a></li>
                   <li><a href="data">Data</a></li>
-                  <li><a href="houseprice">House Price</a></li>
+{#                  <li><a href="houseprice">House Price</a></li>#}
                 </ul>
               </li>
-              <li><a href="https://github.com/sushant822/javascript_project" class="animsition-link">GitHub</a></li>
+              <li><a href="https://github.com/dayothompson/ML_Project" class="animsition-link">GitHub</a></li>
             </ul> <!-- .templateux-menu -->
 
           </nav> <!-- .site-nav -->
@@ -52,8 +52,14 @@
         <div class="row align-items-lg-center">
 
           <div class="col-lg-6 order-lg-1">
-            <h1 class="heading mb-3 text-white" data-aos="fade-up">Remax Realestate <strong>CALGARY</strong></h1>
-            <p class="lead mb-5 text-white" data-aos="fade-up"  data-aos-delay="100">You want to buy a new home or apartment. You have contacted a real estate company to provide you with a detailed copy of the current listings in that city. Unfortunately, the copies provided only contain the current prices of the house and apartments but gives no indication of the walk, transit, and bike scores to nearby amenities. You would like the information provided to include ratings based on the distances to amenities in each category. This might pose a slight problem because you want to have all route options available to you and at anytime you need. You decide to get down to some digging by performing an ETL and Javascript challenge on two websites; ReMax and Walk Score.</p>
+            <h1 class="heading mb-3 text-white" data-aos="fade-up">House Price Finder <strong>CALGARY</strong></h1>
+            <p class="lead mb-5 text-white" data-aos="fade-up"  data-aos-delay="100">You own a real estate company, or you are a real estate agent with several appointments with clients who want to buy or sell houses.
+                You are interested in buying a new home or apartment with features like a basement, garage, distance to your office downtown, quick access to bus/train stations, and a walking distance to supermarkets and other
+                essential amenities. You have chosen certain neighborhoods, but you need an estimate.
+                You are a homeowner and your house is located in a peaceful neighborhood, far from city noise, and a massive lot size for future expansion. You have met with a real estate agent but
+                you are not uncertain about the market value he has presented to you.
+                This app was created for you.
+</p>
           </div>
           
         </div>
@@ -65,42 +71,54 @@
         <div class="row">
           <div class="col-md-12 templateux-overlap">
             <div class="row">
-              <div class="col-md-2" data-aos="fade-up" data-aos-delay="600">
+              <div class="col-md-3" data-aos="fade-up" data-aos-delay="500">
                 <div class="media block-icon-1 d-block text-left shadow p-3 mb-5 bg-white rounded">
                   <div class="icon mb-3">
-                    <img src="static/images/map-heat.jpg" alt="Image" class="img-fluid">
+                    <img src="static/images/ml.jpg" alt="Image" class="img-fluid">
                   </div>
                   <div class="media-body">
-                    <h3 class="h5 mb-3">Cluster Map</h3>
-                    <p>A cluster map of Calgary property listings.</p>
-                    <p><a class="btn btn-primary" href="viz" role="button">Cluster Map</a></p>
+                    <h3 class="h5 mb-3">Machine Learning Model</h3>
+                    <p>Our machine Learning model can predict the price of a house based on its features.</p>
+                    <p><a class="btn btn-primary" href="houseprice" role="button">Find the price</a></p>
                   </div>
                 </div> <!-- .block-icon-1 -->
               </div>
-              <div class="col-md-3" data-aos="fade-up" data-aos-delay="700">
-                <div class="media block-icon-1 d-block text-left shadow p-3 mb-5 bg-white rounded">
-                  <div class="icon mb-3">
-                    <img src="static/images/map-scatter.jpg" alt="Image" class="img-fluid">
-                  </div>
-                  <div class="media-body">
-                    <h3 class="h5 mb-3">Scatter Plot</h3>
-                    <p>A scatter plot comparing price and property area against walk score, bike score and transit score.</p>
-                    <p><a class="btn btn-primary" href="scatter" role="button">Scatter Plot</a></p>
-                  </div>
-                </div> <!-- .block-icon-1 -->
-              </div>
-              <div class="col-md-3" data-aos="fade-up" data-aos-delay="800">
-                <div class="media block-icon-1 d-block text-left shadow p-3 mb-5 bg-white rounded">
-                  <div class="icon mb-3">
-                    <img src="static/images/density.jpg" alt="Image" class="img-fluid">
-                  </div>
-                  <div class="media-body">
-                    <h3 class="h5 mb-3">Density Graph</h3>
-                    <p>A density graph showing bike score.</p>
-                    <p><a class="btn btn-primary" href="bar" role="button">Density Graph</a></p>
-                  </div>
-                </div> <!-- .block-icon-1 -->
-              </div>
+{#              <div class="col-md-2" data-aos="fade-up" data-aos-delay="600">#}
+{#                <div class="media block-icon-1 d-block text-left shadow p-3 mb-5 bg-white rounded">#}
+{#                  <div class="icon mb-3">#}
+{#                    <img src="static/images/map-heat.jpg" alt="Image" class="img-fluid">#}
+{#                  </div>#}
+{#                  <div class="media-body">#}
+{#                    <h3 class="h5 mb-3">Cluster Map</h3>#}
+{#                    <p>A cluster map of Calgary property listings.</p>#}
+{#                    <p><a class="btn btn-primary" href="viz" role="button">Cluster Map</a></p>#}
+{#                  </div>#}
+{#                </div> <!-- .block-icon-1 -->#}
+{#              </div>#}
+{#              <div class="col-md-3" data-aos="fade-up" data-aos-delay="700">#}
+{#                <div class="media block-icon-1 d-block text-left shadow p-3 mb-5 bg-white rounded">#}
+{#                  <div class="icon mb-3">#}
+{#                    <img src="static/images/map-scatter.jpg" alt="Image" class="img-fluid">#}
+{#                  </div>#}
+{#                  <div class="media-body">#}
+{#                    <h3 class="h5 mb-3">Scatter Plot</h3>#}
+{#                    <p>A scatter plot comparing price and property area against walk score, bike score and transit score.</p>#}
+{#                    <p><a class="btn btn-primary" href="scatter" role="button">Scatter Plot</a></p>#}
+{#                  </div>#}
+{#                </div> <!-- .block-icon-1 -->#}
+{#              </div>#}
+{#              <div class="col-md-3" data-aos="fade-up" data-aos-delay="800">#}
+{#                <div class="media block-icon-1 d-block text-left shadow p-3 mb-5 bg-white rounded">#}
+{#                  <div class="icon mb-3">#}
+{#                    <img src="static/images/density.jpg" alt="Image" class="img-fluid">#}
+{#                  </div>#}
+{#                  <div class="media-body">#}
+{#                    <h3 class="h5 mb-3">Density Graph</h3>#}
+{#                    <p>A density graph showing bike score.</p>#}
+{#                    <p><a class="btn btn-primary" href="bar" role="button">Density Graph</a></p>#}
+{#                  </div>#}
+{#                </div> <!-- .block-icon-1 -->#}
+{#              </div>#}
               <div class="col-md-2" data-aos="fade-up" data-aos-delay="900">
                 <div class="media block-icon-1 d-block text-left shadow p-3 mb-5 bg-white rounded">
                   <div class="icon mb-3">
@@ -113,18 +131,18 @@
                   </div>
                 </div> <!-- .block-icon-1 -->
               </div>
-              <div class="col-md-2" data-aos="fade-up" data-aos-delay="900">
-                <div class="media block-icon-1 d-block text-left shadow p-3 mb-5 bg-white rounded">
-                  <div class="icon mb-3">
-                    <img src="static/images/ml.jpg" alt="Image" class="img-fluid">
-                  </div>
-                  <div class="media-body">
-                    <h3 class="h5 mb-3">Machine Learning Model</h3>
-                    <p>Machine Learning model that can predict the price of a house based on its features.</p>
-                    <p><a class="btn btn-primary" href="houseprice" role="button">ML Model</a></p>
-                  </div>
-                </div> <!-- .block-icon-1 -->
-              </div>
+{#              <div class="col-md-2" data-aos="fade-up" data-aos-delay="900">#}
+{#                <div class="media block-icon-1 d-block text-left shadow p-3 mb-5 bg-white rounded">#}
+{#                  <div class="icon mb-3">#}
+{#                    <img src="static/images/ml.jpg" alt="Image" class="img-fluid">#}
+{#                  </div>#}
+{#                  <div class="media-body">#}
+{#                    <h3 class="h5 mb-3">Machine Learning Model</h3>#}
+{#                    <p>Machine Learning model that can predict the price of a house based on its features.</p>#}
+{#                    <p><a class="btn btn-primary" href="houseprice" role="button">ML Model</a></p>#}
+{#                  </div>#}
+{#                </div> #}
+{#              </div>#}
               
             </div>
           </div>
@@ -137,7 +155,7 @@
         <div class="row">
           <div class="col-md">
             <div class="templateux-counter text-center">
-              <span class="templateux-number" data-number="2757">0</span>
+              <span class="templateux-number" data-number="1577">0</span>
               <span class="templateux-label">Number of House Listings</span>
             </div>
           </div>
@@ -159,6 +177,64 @@
     </div>
   </div> <!-- .templateux-section -->
 
+    <div class="templateux-section bg-light py-5" id="templateux-counter-section">
+      <div class="container">
+        <div class="row">
+  <div class="carousel-inner" role="listbox">
+
+    <!--First slide-->
+    <div class="carousel-item active">
+
+      <div class="col-md-3" style="float:left">
+       <div class="card mb-2">
+          <img class="card-img-top"
+            src="{{url_for('static', filename='../static/Alexis.png')}}" alt="Card image cap">
+          <div class="card-body">
+            <h4 class="card-title">Alexis Lawal</h4>
+            <p class="card-text">Accountant</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3" style="float:left">
+        <div class="card mb-2">
+          <img class="card-img-top"
+            src="{{url_for('static', filename='../static/newpic.jpeg')}}" alt="Card image cap">
+          <div class="card-body">
+            <h4 class="card-title">Dayo Thompson</h4>
+            <p class="card-text">Data Analyst</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3" style="float:left">
+        <div class="card mb-2">
+          <img class="card-img-top"
+            src="{{url_for('static', filename='../static/kshan.png')}}" alt="Card image cap">
+          <div class="card-body">
+            <h4 class="card-title">Kirushan Kirubaharan</h4>
+            <p class="card-text">Data Analytics Professional</p>
+          </div>
+        </div>
+      </div>
+
+       <div class="col-md-3" style="float:left">
+       <div class="card mb-2">
+          <img class="card-img-top"
+            src="{{url_for('static', filename='../static/Sushant.jpeg')}}" alt="Card image cap">
+          <div class="card-body">
+            <h4 class="card-title">Sushant Deshpande</h4>
+            <p class="card-text">Data Visualization Expert</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+        </div>
+      </div>
+    </div>
+
   
 
     <div class="row pt-5 text-center">
@@ -177,9 +253,8 @@
 
 </div> <!-- .js-animsition -->
 
-
-<script src="static/js/scripts-all.js"></script>
-<script src="static/js/main.js"></script>
+<script src="../static/js/scripts-all.js"></script>
+<script src="../static/js/main.js"></script>
 
 </body>
 </html>
