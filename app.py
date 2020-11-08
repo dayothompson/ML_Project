@@ -299,10 +299,9 @@ def getvalues():
     Ypredict_full = joblib_LR_model.predict(test_data)
 
     Ypredict = np.round_(Ypredict_full, 2)
+
     #reconstructed_model = keras.models.load_model("data/my_h5_model.h5")
-
     #score = reconstructed_model.fit(test_data)
-
 
     return render_template("houseprice.html", Ypredict=[Ypredict])
 
