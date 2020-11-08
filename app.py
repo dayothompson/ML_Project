@@ -251,14 +251,12 @@ def getvalues():
     R = 6373.0
     distance_downtown = (R * c)+5
 
-
     # Convert to numeric
     bed = int(bed)
     full_bath = int(full_bath)
     half_bath = int(half_bath)
     property_area = float(property_area)
     year_built = int(year_built)
-    #distance_downtown = float(distance_downtown)
     lot_size = float(lot_size)
     basement = int(basement)
     garage = int(garage)
@@ -275,12 +273,10 @@ def getvalues():
     filename = 'data/LogisticRegression.sav'
 
     joblib_LR_model = joblib.load(filename)
-    joblib_LR_model
 
     test_data = [[bed, full_bath, half_bath, property_area, years_old, distance_downtown, lot_size, basement, garage, walk_score, bike_score, transit_score, house, condo, townhouse]]
 
     Ypredict_full = joblib_LR_model.predict(test_data)
-
     Ypredict = np.round_(Ypredict_full, 2)
 
     return render_template("houseprice.html", Ypredict=[Ypredict])
