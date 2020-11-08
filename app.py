@@ -286,9 +286,7 @@ def getvalues():
 
     years_old = 2021 - year_built
 
-    #print(postal_code)
-
-    # Testing ML Model
+    # ML Model
     filename = 'data/LogisticRegression.sav'
 
     joblib_LR_model = joblib.load(filename)
@@ -299,9 +297,6 @@ def getvalues():
     Ypredict_full = joblib_LR_model.predict(test_data)
 
     Ypredict = np.round_(Ypredict_full, 2)
-
-    #reconstructed_model = keras.models.load_model("data/my_h5_model.h5")
-    #score = reconstructed_model.fit(test_data)
 
     return render_template("houseprice.html", Ypredict=[Ypredict])
 
