@@ -96,7 +96,7 @@
       <workItem from="1604772178608" duration="1379000" />
       <workItem from="1604777464352" duration="71000" />
       <workItem from="1604781248332" duration="18067000" />
-      <workItem from="1604820703647" duration="668000" />
+      <workItem from="1604820703647" duration="1332000" />
     </task>
     <servers />
   </component>
@@ -126,6 +126,6 @@
     <state width="1878" height="245" key="GridCell.Tab.0.right/576.-1080.1920.1080/-1344.-1080.1920.1080/0.0.1440.900@576.-1080.1920.1080" timestamp="1604775748771" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/ML_Project$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1604816466589" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/ML_Project$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1604821993036" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>
