@@ -175,18 +175,21 @@ def getvalues():
         house = 0
         condo = 0
         townhouse = 1
+    ####### END #######
 
     ###### Basement ######
     if option_basement == "yes":
         basement = 1
     else:
         basement = 0
+    ####### END #######
 
     ###### Garage ######
     if option_garage == "yes":
         garage = 1
     else:
         garage = 0
+    ####### END #######
     
     postal_code = str(postal_code)
 
@@ -194,7 +197,6 @@ def getvalues():
     scores_walk = []
     scores_bike = []
     scores_transit = []
-
     for i in postal_code:
         try:
             postal_code_a = i.replace(" ", "%20")
@@ -202,7 +204,6 @@ def getvalues():
             # Parse HTML with Beautiful Soup
             response = requests.get(url_score)
             code_soup = BeautifulSoup(response.text, 'html.parser')
-
             if 'pp.walk.sc/badge/walk/score' in str(code_soup):
                 ws = str(code_soup).split('pp.walk.sc/badge/walk/score/')[1][:2].replace('.','')
                 scores_walk.append(ws)
@@ -251,6 +252,7 @@ def getvalues():
     c = 2 * atan2(sqrt(a), sqrt(1 - a))
     R = 6373.0
     distance_downtown = (R * c)+5
+    ####### END #######
 
     ###### Convert to numeric ######
     bed = int(bed)
@@ -281,6 +283,7 @@ def getvalues():
     Ypredict = np.round_(Ypredict_full, 2)
 
     return render_template("houseprice.html", Ypredict=[Ypredict])
+    ####### END #######
 
 if __name__ == "__main__":
     app.run(debug=True)
