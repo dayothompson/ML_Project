@@ -13,7 +13,7 @@ var svg = d3.select("#bar")
           "translate(" + margin.left + "," + margin.top + ")");
 
 // get the data
-var url = "http://127.0.0.1:5000//bardata";
+var url = "http://https://findhouseprice.herokuapp.com/bardata";
 d3.json(url, function(response) {
     data = response[0][0]
     console.log(data);
