@@ -289,15 +289,16 @@ def getvalues():
     #print(postal_code)
 
     # Testing ML Model
-    filename = 'data/LogisticRegression.sav'
+    filename = '/data/LogisticRegression.sav'
 
     joblib_LR_model = joblib.load(filename)
     joblib_LR_model
 
     test_data = [[bed, full_bath, half_bath, property_area, years_old, distance_downtown, lot_size, basement, garage, walk_score, bike_score, transit_score, house, condo, townhouse]]
 
-    Ypredict = joblib_LR_model.predict(test_data)
+    Ypredict_full = joblib_LR_model.predict(test_data)
 
+    Ypredict = np.round_(Ypredict_full, 2)
     #reconstructed_model = keras.models.load_model("data/my_h5_model.h5")
 
     #score = reconstructed_model.fit(test_data)
