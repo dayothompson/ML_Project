@@ -3,6 +3,22 @@
 
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<style>
+.container_but {
+  height: 70px;
+  position: relative;
+  border: 0px solid green;
+}
+
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+</style>
 </head>
 
 <body>
@@ -155,14 +171,17 @@
             <input class="form-control" type="text" placeholder="Townhouse" name="townhouse">
         </div>-->
         <!--<input type="submit" value="submit">-->
-        <br>
+		<div class="container_but">
+        <div class="center">
         <div class="container px-lg-5">
             <div class="row mx-lg-n5">
               <div class="col py-3 px-lg-5 border bg-light"><button type="submit" class="btn btn-primary">Submit</button></div>
             </div>
           </div>
-        
+		</div>
+        </div>
     </form>
+	  <br>
     <!--<form name="passdata1" action="." method="post">
     <div class="form-group">
         <label for="FormControlFile1"><strong>Postal Code</strong></label>
@@ -170,20 +189,19 @@
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
     </form>-->
-
     <div class="container px-lg-5">
         <div class="row mx-lg-n5">
           <div class="col py-3 px-lg-5 border bg-light"><div class="card">
             <div class="card-body">
               <h3>Price: {% for item in Ypredict %}</h3>
-                  <p><strong>{{item[0]}}</strong></p>
+                  <p><strong>$ {{item[0]}}</strong></p>
                   {% endfor %}
             </div>
           </div></div>
         </div>
       </div>
-    
-    </div>
+	  </div>
+
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
