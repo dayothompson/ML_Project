@@ -234,7 +234,7 @@ def getvalues():
     scores_bike_num = scores_bike[0]
     scores_transit_num = scores_transit[0]
 
-
+    ###### Calculating Distance ######
     country_code = pgeocode.Nominatim('ca')
     coord = country_code.query_postal_code(postal_code)
     x = [coord.latitude, coord.longitude]
@@ -252,7 +252,7 @@ def getvalues():
     R = 6373.0
     distance_downtown = (R * c)+5
 
-    # Convert to numeric
+    ###### Convert to numeric ######
     bed = int(bed)
     full_bath = int(full_bath)
     half_bath = int(half_bath)
@@ -270,7 +270,7 @@ def getvalues():
 
     years_old = 2021 - year_built
 
-    # ML Model
+    ###### ML Model ######
     filename = 'data/LogisticRegression.sav'
 
     joblib_LR_model = joblib.load(filename)
