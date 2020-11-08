@@ -156,19 +156,11 @@ def getvalues():
     half_bath = request.form['half_bath']
     property_area = request.form['property_area']
     year_built = request.form['year_built']
-    #distance_downtown = request.form['distance_downtown']
     lot_size = request.form['lot_size']
     option_basement = request.form['option_basement']
     option_garage = request.form['option_garage']
-    #walk_score = request.form['walk_score']
-    #bike_score = request.form['bike_score']
-    #transit_score = request.form['transit_score']
     property_type = request.form['option_ptype']
-    #house = request.form['house']
-    #condo = request.form['condo']
-    #townhouse = request.form['townhouse']
     postal_code = request.form['postal_code']
-    #print(garage)
 
     if property_type == 'house':
         house = 1
@@ -198,20 +190,14 @@ def getvalues():
 
 
     ###### SCRAPE WALKSCORE ######
-
     scores_walk = []
     scores_bike = []
     scores_transit = []
 
     for i in postal_code:
-
-        #time.sleep(5)
-        
         try:
             postal_code_a = i.replace(" ", "%20")
             url_score = "https://www.walkscore.com/score/" + str(postal_code_a)
-            #time.sleep(5)
-
             # Parse HTML with Beautiful Soup
             response = requests.get(url_score)
             code_soup = BeautifulSoup(response.text, 'html.parser')
@@ -241,7 +227,6 @@ def getvalues():
             scores_bike.append(bs)
             ts = 0
             scores_transit.append(ts)
-
     ####### END #######
 
     scores_walk_num = scores_walk[0]
