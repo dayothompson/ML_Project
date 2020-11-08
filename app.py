@@ -289,7 +289,7 @@ def getvalues():
     #print(postal_code)
 
     # Testing ML Model
-    filename = '/data/LogisticRegression.sav'
+    filename = 'data/LogisticRegression.sav'
 
     joblib_LR_model = joblib.load(filename)
     joblib_LR_model
