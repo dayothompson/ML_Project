@@ -303,6 +303,7 @@ def getvalues():
 
     #score = reconstructed_model.fit(test_data)
 
+
     return render_template("houseprice.html", Ypredict=[Ypredict])
 
 if __name__ == "__main__":
