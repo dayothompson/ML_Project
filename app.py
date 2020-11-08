@@ -162,6 +162,7 @@ def getvalues():
     property_type = request.form['option_ptype']
     postal_code = request.form['postal_code']
 
+    ###### Property Type ######
     if property_type == 'house':
         house = 1
         condo = 0
@@ -175,19 +176,19 @@ def getvalues():
         condo = 0
         townhouse = 1
 
+    ###### Basement ######
     if option_basement == "yes":
         basement = 1
     else:
         basement = 0
 
+    ###### Garage ######
     if option_garage == "yes":
         garage = 1
     else:
         garage = 0
-
     
     postal_code = str(postal_code)
-
 
     ###### SCRAPE WALKSCORE ######
     scores_walk = []
