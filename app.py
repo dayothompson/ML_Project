@@ -177,7 +177,7 @@ def getvalues():
         townhouse = 1
     ####### END ####### 
 
-    ###### Basement ######
+    ###### Basement #####
     if option_basement == "yes":
         basement = 1
     else:
