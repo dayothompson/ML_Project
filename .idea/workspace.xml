@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="dcda4bdc-7f40-4b01-96ff-813e94e0e812" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +27,9 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunManager" selected="Flask server.Flask (app.py)">
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/ML_Project/templates/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
     <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -81,6 +85,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Flask server.Flask (app.py)" />
+        <item itemvalue="JavaScript Debug.index.html" />
         <item itemvalue="Python.app" />
       </list>
     </recent_temporary>
@@ -104,28 +109,32 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1558" height="196" key="GridCell.Tab.0.bottom" timestamp="1604816466601">
-      <screen x="-60" y="-900" width="1600" height="900" />
+    <state width="1878" height="302" key="GridCell.Tab.0.bottom" timestamp="1604987913641">
+      <screen x="-1344" y="-1080" width="1920" height="1080" />
     </state>
     <state width="1558" height="196" key="GridCell.Tab.0.bottom/-60.-900.1600.900/0.0.1440.900@-60.-900.1600.900" timestamp="1604816466601" />
+    <state width="1878" height="302" key="GridCell.Tab.0.bottom/576.-1080.1920.1080/-1344.-1080.1920.1080/0.0.1440.900@-1344.-1080.1920.1080" timestamp="1604987913641" />
     <state width="1878" height="245" key="GridCell.Tab.0.bottom/576.-1080.1920.1080/-1344.-1080.1920.1080/0.0.1440.900@576.-1080.1920.1080" timestamp="1604775748772" />
-    <state width="1558" height="196" key="GridCell.Tab.0.center" timestamp="1604816466599">
-      <screen x="-60" y="-900" width="1600" height="900" />
+    <state width="1878" height="302" key="GridCell.Tab.0.center" timestamp="1604987913639">
+      <screen x="-1344" y="-1080" width="1920" height="1080" />
     </state>
     <state width="1558" height="196" key="GridCell.Tab.0.center/-60.-900.1600.900/0.0.1440.900@-60.-900.1600.900" timestamp="1604816466599" />
+    <state width="1878" height="302" key="GridCell.Tab.0.center/576.-1080.1920.1080/-1344.-1080.1920.1080/0.0.1440.900@-1344.-1080.1920.1080" timestamp="1604987913639" />
     <state width="1878" height="245" key="GridCell.Tab.0.center/576.-1080.1920.1080/-1344.-1080.1920.1080/0.0.1440.900@576.-1080.1920.1080" timestamp="1604775748769" />
-    <state width="1558" height="196" key="GridCell.Tab.0.left" timestamp="1604816466598">
-      <screen x="-60" y="-900" width="1600" height="900" />
+    <state width="1878" height="302" key="GridCell.Tab.0.left" timestamp="1604987913638">
+      <screen x="-1344" y="-1080" width="1920" height="1080" />
     </state>
     <state width="1558" height="196" key="GridCell.Tab.0.left/-60.-900.1600.900/0.0.1440.900@-60.-900.1600.900" timestamp="1604816466598" />
+    <state width="1878" height="302" key="GridCell.Tab.0.left/576.-1080.1920.1080/-1344.-1080.1920.1080/0.0.1440.900@-1344.-1080.1920.1080" timestamp="1604987913638" />
     <state width="1878" height="245" key="GridCell.Tab.0.left/576.-1080.1920.1080/-1344.-1080.1920.1080/0.0.1440.900@576.-1080.1920.1080" timestamp="1604775748766" />
-    <state width="1558" height="196" key="GridCell.Tab.0.right" timestamp="1604816466600">
-      <screen x="-60" y="-900" width="1600" height="900" />
+    <state width="1878" height="302" key="GridCell.Tab.0.right" timestamp="1604987913640">
+      <screen x="-1344" y="-1080" width="1920" height="1080" />
     </state>
     <state width="1558" height="196" key="GridCell.Tab.0.right/-60.-900.1600.900/0.0.1440.900@-60.-900.1600.900" timestamp="1604816466600" />
+    <state width="1878" height="302" key="GridCell.Tab.0.right/576.-1080.1920.1080/-1344.-1080.1920.1080/0.0.1440.900@-1344.-1080.1920.1080" timestamp="1604987913640" />
     <state width="1878" height="245" key="GridCell.Tab.0.right/576.-1080.1920.1080/-1344.-1080.1920.1080/0.0.1440.900@576.-1080.1920.1080" timestamp="1604775748771" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/ML_Project$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1604821993036" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/ML_Project$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1604987913628" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>
