@@ -156,20 +156,13 @@ def getvalues():
     half_bath = request.form['half_bath']
     property_area = request.form['property_area']
     year_built = request.form['year_built']
-    #distance_downtown = request.form['distance_downtown']
     lot_size = request.form['lot_size']
     option_basement = request.form['option_basement']
     option_garage = request.form['option_garage']
-    #walk_score = request.form['walk_score']
-    #bike_score = request.form['bike_score']
-    #transit_score = request.form['transit_score']
     property_type = request.form['option_ptype']
-    #house = request.form['house']
-    #condo = request.form['condo']
-    #townhouse = request.form['townhouse']
     postal_code = request.form['postal_code']
-    #print(garage)
 
+    ###### Property Type ######
     if property_type == 'house':
         house = 1
         condo = 0
@@ -182,40 +175,35 @@ def getvalues():
         house = 0
         condo = 0
         townhouse = 1
+    ####### END ####### 
 
+    ###### Basement #####
     if option_basement == "yes":
         basement = 1
     else:
         basement = 0
+    ####### END #######
 
+    ###### Garage ######
     if option_garage == "yes":
         garage = 1
     else:
         garage = 0
-
+    ####### END #######
     
     postal_code = str(postal_code)
 
-
     ###### SCRAPE WALKSCORE ######
-
     scores_walk = []
     scores_bike = []
     scores_transit = []
-
     for i in postal_code:
-
-        #time.sleep(5)
-        
         try:
             postal_code_a = i.replace(" ", "%20")
             url_score = "https://www.walkscore.com/score/" + str(postal_code_a)
-            #time.sleep(5)
-
             # Parse HTML with Beautiful Soup
             response = requests.get(url_score)
             code_soup = BeautifulSoup(response.text, 'html.parser')
-
             if 'pp.walk.sc/badge/walk/score' in str(code_soup):
                 ws = str(code_soup).split('pp.walk.sc/badge/walk/score/')[1][:2].replace('.','')
                 scores_walk.append(ws)
@@ -241,14 +229,13 @@ def getvalues():
             scores_bike.append(bs)
             ts = 0
             scores_transit.append(ts)
-
     ####### END #######
 
     scores_walk_num = scores_walk[0]
     scores_bike_num = scores_bike[0]
     scores_transit_num = scores_transit[0]
 
-
+    ###### Calculating Distance ######
     country_code = pgeocode.Nominatim('ca')
     coord = country_code.query_postal_code(postal_code)
     x = [coord.latitude, coord.longitude]
@@ -265,15 +252,14 @@ def getvalues():
     c = 2 * atan2(sqrt(a), sqrt(1 - a))
     R = 6373.0
     distance_downtown = (R * c)+5
+    ####### END #######
 
-
-    # Convert to numeric
+    ###### Convert to numeric ######
     bed = int(bed)
     full_bath = int(full_bath)
     half_bath = int(half_bath)
     property_area = float(property_area)
     year_built = int(year_built)
-    #distance_downtown = float(distance_downtown)
     lot_size = float(lot_size)
     basement = int(basement)
     garage = int(garage)
@@ -286,23 +272,18 @@ def getvalues():
 
     years_old = 2021 - year_built
 
-    #print(postal_code)
-
-    # Testing ML Model
+    ###### ML Model ######
     filename = 'data/LogisticRegression.sav'
 
     joblib_LR_model = joblib.load(filename)
-    joblib_LR_model
 
     test_data = [[bed, full_bath, half_bath, property_area, years_old, distance_downtown, lot_size, basement, garage, walk_score, bike_score, transit_score, house, condo, townhouse]]
 
-    Ypredict = joblib_LR_model.predict(test_data)
-
-    #reconstructed_model = keras.models.load_model("data/my_h5_model.h5")
-
-    #score = reconstructed_model.fit(test_data)
+    Ypredict_full = joblib_LR_model.predict(test_data)
+    Ypredict = np.round_(Ypredict_full, 2)
 
     return render_template("houseprice.html", Ypredict=[Ypredict])
+    ####### END #######
 
 if __name__ == "__main__":
     app.run(debug=True)
